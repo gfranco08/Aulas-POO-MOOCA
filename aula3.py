@@ -1,20 +1,25 @@
-class terreno():
-    def calcularAreaDoRetangulo(self, L, C):
-        area = (L*C)
-        return area
-    def valorTotal(self, area, valor):
-       
-        return  valor * area
-    def taxa_financiamento(self, valor):
-        return valor + (valor*0.22)
-   
+class Terreno:
 
-largura = float(input("digite a largura do retangulo: "))
-comprimento = float(input("digite o comprimento do retangulo: "))
-terrno1 = terreno()
-areaTerreno = terrno1.calcularAreaDoRetangulo(largura, comprimento)
-print(f"area do retangulo é {areaTerreno} M2")
+    def calcular_area(self, largura, comprimento):
+        return largura * comprimento
 
-valor = float(input("valor do terreno: "))
-print(f"valor total do terreno é {terrno1.valorTotal(areaTerreno, valor)}")
-print(f"valor total do terreno com financiamento é {terrno1.taxa_financiamento(terrno1.valorTotal(areaTerreno, valor))}")  
+    def calcular_preco_total(self, largura, comprimento, preco_metro):
+        area = self.calcular_area(largura, comprimento)
+        return area * preco_metro
+
+    def calcular_preco_financiado(self, largura, comprimento, preco_metro):
+        total = self.calcular_preco_total(largura, comprimento, preco_metro)
+        return total * 1.22
+
+
+# Programa principal
+largura = float(input("Digite a largura do terreno: "))
+comprimento = float(input("Digite o comprimento do terreno: "))
+preco_metro = float(input("Digite o preço do metro quadrado: "))
+
+# Criando o objeto
+terreno = Terreno()
+
+print("Área do terreno:", terreno.calcular_area(largura, comprimento), "m²")
+print("Preço total: R$", terreno.calcular_preco_total(largura, comprimento, preco_metro))
+print("Preço financiado (22% juros): R$", terreno.calcular_preco_financiado(largura, comprimento, preco_metro))
