@@ -19,7 +19,6 @@ B = Bicicleta("caloi")
 print(C.marca, ">", C.mover())
 print(B.marca, ">", B.mover())
 
-#-----------------------------------------------------------------
 print(40*"-")
 
 class pessoa:
@@ -35,8 +34,6 @@ class estudante(pessoa):
 e = estudante("helena","22", "123456")
 print(e.nome, ">", e.matricula, ">", e.idade)
 help(e)
-
-#--------------------------------------
 
 
 class animal:
@@ -70,11 +67,6 @@ print()
 print("rex é instancia de cachorro?", isinstance(rex,cachorro))
 print
 
-
-
-
-#-----------------------------------
-# print(40*"-")
 
 class A: pass
 class B: pass
