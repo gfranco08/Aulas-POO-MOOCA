@@ -20,16 +20,14 @@ print("." * 30)
 a.demonstra()
 b.demonstra()
 
-#------------------------------------------------------------------------------
+
 
 class Teste2:
-    _instance = None # variavel de classe para armazenar a instancia unica
+    _instance = None 
 
-    def __new__(cls, *args, **kwargs):
-        # O __new__ recebe a clase(cls) e nao a instancia (self)
+    def __new__(cls, *args, **kwargs):  
         if cls._instance is None:
             print("[__new__]: Alocando nova memoria... ")
-            # chamamos o metodo da superclasse (object) para alocar os bytes
             cls._instance = super().__new__(cls)
         else:
             print("""
