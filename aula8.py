@@ -58,3 +58,5 @@ class Usuario:
     @nome.setter 
     def nome(self, valor):
         self._nome = valor
+
+
